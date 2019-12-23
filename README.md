@@ -19,7 +19,7 @@ LSF_DOCKER_PRESERVE_ENVIRONMENT=false bsub -Is -q research-hpc -J work-space -M 
 
 ## 1. Prepare Expression
 
-Gene counts (e.g.,, ```*.ReadsPerGene.out.tab``` from STAR) are merged into Gene Count Tables (gct) and Gene TPM Tables (gtt) for each cortex sub-region in a study  
+Gene counts (e.g., ```*.ReadsPerGene.out.tab``` from STAR) are merged into Gene Count Tables (gct) and Gene TPM Tables (gtt) for each cortex sub-region in a study  
 
 - Environment: FENIX
 - Inputs:
