@@ -159,7 +159,7 @@ prepare_genotypes.py $BFILE $PARTICIPANT_LIST_DIR --output_dir $OUTPUT_DIR
 
   - genotype file ```<region_id>.snps.txt``` is formatted for qtl analysis
 
-## 4. Region-level regressions of expression on genotype 
+## 5. Region-level regressions of expression on genotype 
 
 MatrixQTL is used to calculate cis and trans eQTLs in cortex regions per study
 
@@ -167,7 +167,7 @@ MatrixQTL is used to calculate cis and trans eQTLs in cortex regions per study
 
 - Inputs:
 
-  - $JSON: JSON file with paths to expression, genotype and covariate data. Look at ```sample_data/mqtl_inputs.json``` 
+  - $JSON: JSON file with paths to expression, genotype and covariate data. Look at ```json/mqtl_inputs.json``` 
   - $CHUNKSIZE: Number of chunks (e.g., 500) to split expression matrices into for parallel processing
   - $OUTPUT_DIR: Output directory
 
@@ -192,7 +192,7 @@ SNP     gene    beta    t-stat  p-value FDR
 - Estimated compile time:
     - 4-6 hrs
 
-## 5. Meta-analysis
+## 6. Meta-analysis
 
 Chunk-level Estimates of QTL associations are aggregated gene-wise to prepare input for METASOFT. 
 
@@ -253,6 +253,13 @@ python3 parallel_run_metasoft.py $MS_INPUT_DIR -o $OUTPUT_DIR
 - Outputs:
 
   - METASOFT chunk outputs ```$OUTPUT_DIR/$CHUNKID.metasoft.txt```
+
+```
+RSID    #STUDY  PVALUE_FE       BETA_FE STD_FE  PVALUE_RE       BETA_RE STD_RE  PVALUE_RE2      STAT1_RE2       STAT2_RE2       PVALUE_BE       I_SQUARE        Q       PVALUE_Q        TAU_SQUARE      PVALUES_OF_STUDIES(Tab_delimitered)  MVALUES_OF_STUDIES(Tab_delimitered)
+ENSG00000131381,13:35232314:C:T 2       0.819176        -0.0326961      0.143025        0.935330        0.0460471       0.567495        0.00265677      0.0522601       9.29398 NA      93.5058 15.3983 8.70679E-05     0.602327        NA   NA       0.00626023      NA      0.00473831      NA      NA      0.459   NA      0.469
+ENSG00000131381,7:55195720:G:T  2       0.482407        -0.0827793      0.117846        0.873377        0.0761512       0.477826        0.00364158      0.493417        8.27251 NA      93.0309 14.3490 0.000151859     0.425075        NA   NA       0.00641391      NA      0.00647809      NA      NA      0.565   NA      0.386
+ENSG00000131381,4:37904228:A:T  2       1.06325E-05     -0.170458       0.0387062       0.0375586       -0.230660       0.110913        1.17625E-05     19.3943 0.183636        NA      76.9912 4.34616 0.0370925       0.0194410       0.00118542    NA      NA      NA      0.000275872     0.981   NA      NA      NA      0.991
+```
 
 - Estimated compile time:
 
