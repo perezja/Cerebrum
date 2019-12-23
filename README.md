@@ -66,7 +66,7 @@ python3 normalize_expression.py $GCT_DIR $GTT_DIR $SAMPLE2PARTICIPANT --annotati
 
 ## 3. Prepare Covariates
 
-PEER factors can be generated using ```run_PEER.R```
+I. PEER factors can be generated using ```run_PEER.R```
 
 - Environment: Docker (apollodorus/brain-eqtl:eqtl-analysis) 
 
@@ -89,7 +89,7 @@ Rscript run_PEER.R $EXPR $PREFIX $N -o $OUTPUT_DUR
 
 - Estimated compile time: < 5m
 
-Individual phenotypes are combined with PEER expression covariates to create covariate tables for each sub-region in a study. 
+II. Individual phenotypes are combined with PEER expression covariates to create covariate tables for each sub-region in a study. 
 
 - Environment: Docker (apollodorus/brain-eqtl:eqtl-analysis) 
 
@@ -97,18 +97,22 @@ Individual phenotypes are combined with PEER expression covariates to create cov
 
     - $PHENOTYPES: A table with sample names in column 1 followed by their corresponding k phenotypes in columns (2,...,k+1) 
 
+```
 participant_id  PC1     PC2     PC3     Age     Gender
 DIAN_1DKYRE^8012957511^201711_CoreExome -0.00596815     -0.00293676     -0.00766941     57.0    0
 DIAN_2968OM^8012957462^2017NeuroX2      -0.00665722     0.0008246369999999999   -0.00591766     47.0    0
 DIAN_62CYZP^8012957085^201711_CoreExome -0.00551273     -0.00310693     0.00270309      63.0    1
 DIAN_9TPSKM^8012957707^201711_CoreExome -0.00550265     -0.00264916     0.0110613       40.0    0
+```
 
     - $SAMPLE2REGION: TSV lookup table mapping participants (sample names) to a region ID (same as used for naming expression matrices and peer covariate files) 
 
+```
 MayoADGS_786^unk^2017Omni25Exome        TCTX
 MayoADGS_787^unk^2017Omni25Exome        TCTX
 GTEX_ZUA1^unk^2017_GTEXv7_HiSeqWGS      PFCTX
 MAP_63377^09AD19850^2013OmniEx_NACCR3   PAR
+```
 
     - $EXPR_DIR: Directory with expression matrices
 
