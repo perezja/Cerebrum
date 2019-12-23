@@ -1,0 +1,27 @@
+{
+	"msbb": {
+		"BM10": { "counts":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/BM10",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/BM10"},
+		"BM22": { "counts":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/BM22",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/BM22"},
+		"BM36": { "counts":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/BM36",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/BM36"},
+		"BM44": { "counts":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/BM44",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201812_MSBB/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/BM44"} },
+	"gtex": {
+		"ACCTX": { "counts":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/Anterior_cingulate_cortex_BA24",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/Anterior_cingulate_cortex_BA24"},
+		"PFCTX": { "counts":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/Frontal_Cortex_BA9",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/Frontal_Cortex_BA9"},
+		"CTX": { "counts":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/03.-STAR/Hg19/Cortex",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201807_GTex/Gene_Expression/02.-ProcessedData/04.-Salmon/Hg19/Cortex"} },
+	"mayo": {
+		"TCTX": { "counts":"/40/Public_Data/bulkRNASeq/201606_MayoRNAseq/02.-ProcessedData/03.-STAR/Hg19/temporal_cortex",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201606_MayoRNAseq/02.-ProcessedData/04.-Salmon/Hg19/temporal_cortex"} },
+	"knight":{ 
+		"PAR": { "counts":"/40/Cruchaga_Data/bulkRNASeq/201703_MendelianVsSporadics/02.-ProcessedData/03.-STAR/Hg19/parietal",
+			  "tpm":"/40/Cruchaga_Data/bulkRNASeq/201703_MendelianVsSporadics/02.-ProcessedData/04.-Salmon/Hg19/parietal"} },
+	"rosmap":{ 
+		"DLPFC": { "counts":"/40/Public_Data/bulkRNASeq/201506_ROSMAP/Gene_Expression/BulkDLPFC_RNAseq/02.-ProcessedData/03.-STAR/Hg19/dorsolateral_prefrontal_cortex",
+			  "tpm":"/40/Public_Data/bulkRNASeq/201506_ROSMAP/Gene_Expression/BulkDLPFC_RNAseq/02.-ProcessedData/04.-Salmon/Hg19/dorsolateral_prefrontal_cortex"} }
+}

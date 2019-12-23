@@ -1,0 +1,5 @@
+{
+    "exp_dir":"/gscmnt/gc2645/wgs/qtl/BrainQTL/data/individual_level_stats/expression",
+    "cov_dir":"/gscmnt/gc2645/wgs/qtl/BrainQTL/data/individual_level_stats/combined_covariates",
+    "snp_dir":"/gscmnt/gc2645/wgs/qtl/BrainQTL/data/individual_level_stats/genotypes"
+}
