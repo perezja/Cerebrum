@@ -96,6 +96,10 @@ II. Individual phenotypes are combined with PEER expression covariates to create
 - Inputs:
 
     - $PHENOTYPES: A table with sample names in column 1 followed by their corresponding k phenotypes in columns (2,...,k+1) 
+    - $SAMPLE2REGION: TSV lookup table mapping participants (sample names) to a region ID (same as used for naming expression matrices and peer covariate files) 
+    - $EXPR_DIR: Directory with expression matrices
+
+Example of ```$PHENOTYPES``` file
 
 ```
 participant_id  PC1     PC2     PC3     Age     Gender
@@ -105,7 +109,7 @@ DIAN_62CYZP^8012957085^201711_CoreExome -0.00551273     -0.00310693     0.002703
 DIAN_9TPSKM^8012957707^201711_CoreExome -0.00550265     -0.00264916     0.0110613       40.0    0
 ```
 
-    - $SAMPLE2REGION: TSV lookup table mapping participants (sample names) to a region ID (same as used for naming expression matrices and peer covariate files) 
+Example of ```$SAMPLE2REGION```
 
 ```
 MayoADGS_786^unk^2017Omni25Exome        TCTX
@@ -113,8 +117,6 @@ MayoADGS_787^unk^2017Omni25Exome        TCTX
 GTEX_ZUA1^unk^2017_GTEXv7_HiSeqWGS      PFCTX
 MAP_63377^09AD19850^2013OmniEx_NACCR3   PAR
 ```
-
-    - $EXPR_DIR: Directory with expression matrices
 
 ```
 python3 combine_covariates.py $PHENOTYPES $SAMPLE2REGION $EXPR_DIR 
@@ -126,7 +128,7 @@ python3 combine_covariates.py $PHENOTYPES $SAMPLE2REGION $EXPR_DIR
 
 - Estimated compile time < 1min
 
-It is CRUCIAL that the order of sample IDs columns in ```$REGION.combined_covariates.txt``` file match order of samples in expression matrices. The script ```order_participants.R``` in ```src/prepare_individual_data/prepare_covariates``` reorders the former according to latter. 
+It is CRUCIAL that the order of sample IDs (columns) in ```$REGION.combined_covariates.txt``` match those in the expression matrices. The script ```order_participants.R``` in ```src/prepare_individual_data/prepare_covariates``` reorders the former according to latter. 
 
 ## 4. Prepare genotypes
 
@@ -140,7 +142,7 @@ Assuming genotypes for participants are already imputed and passed QC, some data
 ```
 ./extract_ids.sh region_participant_dir
 ```
-- writes region/study id lists ```$REGION_id_list.txt``` to directory ```region_participant_dir```
+writes region/study id lists ```$REGION_id_list.txt``` to directory ```region_participant_dir```
 
 - Environment: FENIX
 
@@ -179,18 +181,20 @@ The ```--lsf``` flag wraps MatrixQTL call in a LSF job submission command to run
  
   - $REGION_chunk$N.assoc.txt.gz 
 
+```
 SNP     gene    beta    t-stat  p-value FDR
 12:31226835:A:T ENSG00000013573 1.2170867316562 22.5695254857688        2.66679285555292e-33    6.91028431826582e-24
 12:31244846:C:G ENSG00000013573 1.17756467048307        19.9822594463213        3.60187054210892e-30    2.40499185917088e-22
 12:31251544:C:T ENSG00000013573 1.17756467048307        19.9822594463213        3.60187054210892e-30    2.40499185917088e-22
 12:31251803:A:G ENSG00000013573 1.17756467048307        19.9822594463213        3.60187054210892e-30    2.40499185917088e-22
+```
 
 - Estimated compile time:
     - 4-6 hrs
 
 ## 5. Meta-analysis
 
-Chunk-level Estimates of QTL associations are aggregated gene-wise to prepare input for Metasoft. 
+Chunk-level Estimates of QTL associations are aggregated gene-wise to prepare input for METASOFT. 
 
 - Environment: MGI in a virtual-workstation 
 
